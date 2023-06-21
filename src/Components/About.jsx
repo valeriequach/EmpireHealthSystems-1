@@ -8,19 +8,19 @@ function About(){
                     About Us
                 </h1>
             </div>
-            <div className="relative w-screen h-5/6 ">
-                <div className="absolute text-center w-screen h-full flex flex-col justify-center items-center px-16 py-8 z-30 text-white font-Poppins font-bold">
+            <div className="relative w-screen h-screen md:h-5/6">
+                <div className="absolute text-center w-screen h-screen md:h-5/6 flex flex-col justify-center items-center px-16 py-8 z-30 text-white font-Poppins font-bold">
                 <h2 className="text-2xl md:text-3xl py-4 w-5/12 border-b-2 border-white">Our Mission</h2>
                 <span className="px-4 md:px-24 pt-4 pb-8">We are committed to improving the quality of life of our homebound patients by utilizing a comprehensive approach and by making ourselves available whenever they need our services. With the use of innovative technology, we strive to enable our patients and health professionals to have constant communication and consultation.</span>
                 <h2 className="text-2xl md:text-3xl py-4 w-5/12 border-b-2 border-white">Our Vision</h2>
                 <span className="px-4 md:px-24 py-4">We aim to be the premier medical practice group that will pioneer advancement in health care. Using the latest trends available in technology we can help our patients receive the health care that they deserve.</span>
                 </div>
                 <div className="absolute w-screen h-full bg-[#205ebf] opacity-80 z-10"></div>
-                <div className="w-screen h-5/6 object-cover z-20 overflow-hidden">
+                <div className="w-screen h-screen md:h-5/6 object-cover z-20 overflow-hidden">
                 <img 
                     src="/assets/wheelchair.jpg" 
                     alt="man in wheelchair recieves help" 
-                    className="w-screen" />
+                    className="min-h-full object-cover object-center md:w-screen md:h-screen" />
                 </div>
             </div>
             <div className="w-screen h-auto">
