@@ -3,7 +3,7 @@ import React from "react";
 function About(){
     return(
         <div className="flex flex-col">
-            <div className="w-screen h-auto flex justify-center py-4 shadow-lg">
+            <div className="w-screen h-auto flex justify-center py-4 shadow-xl">
                 <h1 className="text-empireblue text-3xl md:text-4xl lg:text-5xl font-bold">
                     About Us
                 </h1>
@@ -24,7 +24,15 @@ function About(){
                 </div>
             </div>
             <div className="w-screen h-auto">
-            <div className="px-4 md:px-12 lg:px-32 py-16 text-black text-sm font-Poppins">
+            <div className="px-4 md:px-12 lg:px-32 py-6 md:py-8 text-black text-sm font-Poppins">
+            <h1 className="text-3xl font-bold text-empireblue-dark py-4">Current Business Objective</h1>
+            
+                <h2 className="text-xl font-bold text-empireblue">Medical Group Practice:</h2><br></br>
+            <span>
+                   <strong>1.</strong> Provides MD’s with a concierge service practice allowing them a convenient tele-consultation extension practice of their medical profession.<br></br>
+                   <strong>2.</strong> Provides qualified patients a cost effective solution to their medical diagnosis, prescription and treatment regimen requirements in the comfort of their homes.<br></br>
+                   <strong>3.</strong> Provides Healthcare Agencies a professional medical evaluation of their pre-patients for appropriateness checks and patient care plans, as required.<br></br>
+            </span>
             <h1 className="text-3xl font-bold text-empireblue-dark py-4">Our Core Values</h1>
             <span><strong>Integrity</strong> – Our patients can trust that our health professionals are licensed, have undergone proper training, and are experienced in their respective fields of work.</span><br></br><br></br>
             <span><strong>Reliability</strong> – You can depend on us to be always available and to do our best so your loved ones can receive the health assistance that they need.</span><br></br><br></br>
@@ -39,7 +47,7 @@ Avoid getting stuck in traffic while driving to doctor’s appointments.<br></br
 No lengthy medical forms to fill out.<br></br>
 Have treatment in the convenience of your home.<br></br>
 Avoid getting exposed to communicable disease.<br></br>
-For more information about us, please send us a message or reach us through our contact details..</span>
+For more information about us, please send us a message or reach us through our contact details.</span>
             </div>
             </div>
         </div>

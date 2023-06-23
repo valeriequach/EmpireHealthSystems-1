@@ -7,7 +7,11 @@ function Home(){
         <div className="w-screen h-[90vh] md:h-[95vh]">
             <div className="w-screen h-[90vh] md:h-[95vh] absolute flex flex-col justify-center items-center z-20">
                 <span className="text-center text-3xl md:text-5xl font-Poppins font-bold text-white pb-6">Building the Future of Health Care</span>
-                <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3">SCHEDULE YOUR APPOINTMENT</button>
+                <a href="https://empirehsi.com/intake/">
+                <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3">
+                    SCHEDULE YOUR APPOINTMENT
+                </button>
+                </a>
             </div>
             <div className=" w-screen h-[90vh] md:h-[95vh] lg:h-screen absolute bg-empiregray opacity-50 z-10"></div>
             <img 
@@ -16,7 +20,7 @@ function Home(){
                 alt="Hospice and Home Health"
             />
         </div>
-        <div className="w-screen h-[120vh] lg:h-[80vh] bg-white">
+        <div className="w-screen h-[80vh] sm:h-[120vh] lg:h-[80vh] bg-white">
             <div className="flex flex-col lg:flex-row justify-center items-center w-full h-full">
                 <div className="w-full lg:w-1/2 font-Poppins p-8 md:pt-10 lg:pt-4 h-3/5 text-[#3d3d3d]">
                     <h2 className="font-bold text-xl">Welcome To</h2>
