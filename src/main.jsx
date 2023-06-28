@@ -4,10 +4,12 @@ import App from './App.jsx'
 import Home from './Components/Home.jsx'
 import About from './Components/About.jsx'
 import Services from './Components/Services.jsx'
+import { Intake } from './Components/Intake.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import ErrorPage from "./error-page"
 import './index.css'
+
 
 const router = createBrowserRouter(
   [
@@ -28,6 +30,10 @@ const router = createBrowserRouter(
           path: "/Services",
           element: <Services />,
         },
+        {
+          path: "/Intake",
+          element: <Intake />,
+        }
       ]
     }
   ]

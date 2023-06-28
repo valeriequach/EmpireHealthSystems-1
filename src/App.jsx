@@ -87,11 +87,11 @@ function App() {
               SERVICES
             </li>
             </Link>
-            <a href="https://empirehsi.com/intake/">
+            <Link to={"/Intake"}>
             <li className='flex justify-start items-center hover:text-empireyellow px-2'>
               INTAKE FORM
             </li>
-            </a>
+            </Link>
             <a href="https://empirehsi.com/volunteer/">
             <li className='flex justify-start items-center hover:text-empireyellow px-2'>
               VOLUNTEER WITH US
