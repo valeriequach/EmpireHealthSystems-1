@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-const { google } = require('googleapis');
-const sheets = google.sheets({ version: 'v4' });
 export const Intake = () => {
     const [formData, setFormData] = useState({
         lastName: "",
