@@ -1,7 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const { validationResult } = require('express-validator');
-const expressValidator = require('express-validator');
+const { check, validationResult } = require('express-validator');
 
 const intakeFormSchema = new mongoose.Schema({
   
@@ -31,8 +30,6 @@ const intakeFormSchema = new mongoose.Schema({
 });
 const IntakeForm = mongoose.model('IntakeForm', intakeFormSchema);
 
-const { check, validationResult } = require('express-validator');
-
 const validateFormData = (data) => {
     const validationChains = [
         check('lastName').isString().withMessage('lastName must be a string'),
@@ -60,15 +57,12 @@ const validateFormData = (data) => {
         check('supervisingMD').isString().withMessage('supervisingMD must be a string'),
     ];
 
-    const errors = [];
-    validationChains.forEach(chain => {
-        const result = chain.run({body: data});
-        if (!result.isEmpty()) {
-            errors.push(...result.array());
-        }
-    });
+    const errors = validationResult(data);
+    if (!errors.isEmpty()) {
+        return errors.array();
+    }
 
-    return errors;
+    return [];
 };
 
 exports.handler = async (event, context) => {
