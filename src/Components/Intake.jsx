@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from 'axios';
+
 
 export const Intake = () => {
     const [formData, setFormData] = useState({
@@ -33,14 +35,15 @@ export const Intake = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://649dbfe99bac4a8e669e436b.mockapi.io/:endpoint', formData)
+
+        axios.post('http://localhost:5001/submit', formData)
           .then(response => {
             console.log(response.data);
           })
           .catch(error => {
             console.log('Error:', error);
           });
-    }
+      }
 
     return (
         <>
@@ -281,14 +284,13 @@ export const Intake = () => {
     <label htmlFor="supervisingMD" className="block">Referred Supervising MD - Select an MD *</label>
     <select id="supervisingMD" name="supervisingMD" onChange={handleChange} className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 border-l-0 border-r-0 border-t-0  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:focus:ring-offset-gray-900" required >
         <option value="">--Please choose an option--</option>
-        <option value="md1">MD1</option>
+        <option value="md1">Dr. Valle NPI#123456789</option>
         <option value="md2">MD2</option>
-        //... add other MD options here ...
     </select>
 </div>
 
             <div>
-                <button type="submit" className="w-full px-4 py-2 text-lg font-semibold text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Submit</button>
+                <button type="submit" onClick={handleSubmit} className="w-full px-4 py-2 text-lg font-semibold text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Submit</button>
             </div>
         </form>
             </div>
