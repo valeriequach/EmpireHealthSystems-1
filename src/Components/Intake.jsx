@@ -36,7 +36,7 @@ export const Intake = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5001/submit', formData)
+        axios.post('/.netlify/functions/intakeForm', formData)
           .then(response => {
             console.log(response.data);
           })
