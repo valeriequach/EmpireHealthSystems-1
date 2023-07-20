@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
@@ -42,7 +42,7 @@ function Intake(){
       
         try {
             console.log('About to make request with form data:', formData);
-            const response = await axios.post('http://142.93.250.55:3000/', formData, { headers: { 'Content-Type': 'application/json' } });
+            const response = await axios.post('https://api.empirehsi.com', formData, { headers: { 'Content-Type': 'application/json' } });
             console.log('Form submitted successfully:', response.data);
             navigate("/FormSubmit");
         } catch (error) {
