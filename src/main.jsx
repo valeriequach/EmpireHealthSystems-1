@@ -4,7 +4,8 @@ import App from './App.jsx'
 import Home from './Components/Home.jsx'
 import About from './Components/About.jsx'
 import Services from './Components/Services.jsx'
-import { Intake } from './Components/Intake.jsx'
+import Intake from './Components/Intake.jsx'
+import FormSubmit from './Components/FormSubmit.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import ErrorPage from "./error-page"
@@ -33,6 +34,10 @@ const router = createBrowserRouter(
         {
           path: "/Intake",
           element: <Intake />,
+        },
+        {
+          path: "/FormSubmit",
+          element: <FormSubmit />,
         }
       ]
     }

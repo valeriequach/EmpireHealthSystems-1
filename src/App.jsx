@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate()
+  const handleClick = (path) => {
+    navigate(path);
+    setShowMenu(false);
+  }
   return (
     <div className='flex flex-col w-screen h-screen'>
        <div className='relative
@@ -21,31 +27,18 @@ function App() {
           <ul className='list-none flex flex-row
                          font-Poppins text-sm font-bold
                          pt-8'>
-            <Link to={"/"}>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2'> 
-              HOME
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/')}>
+                HOME
             </li>
-            </Link>
-            <Link to={"/About-Us"}>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2'>
-              ABOUT US
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/About-Us')}>
+                ABOUT US
             </li>
-            </Link>
-            <Link to={"/Services"}>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2'>
-              SERVICES
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/Services')}>
+                SERVICES
             </li>
-            </Link>
-            <Link to={"/Intake"}>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2'>
-              INTAKE FORM
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/Intake')}>
+                INTAKE FORM
             </li>
-            </Link>
-            <a href="https://empirehsi.com/volunteer/">
-            <li className='flex justify-center items-center hover:text-empireyellow px-2'>
-              VOLUNTEER WITH US
-            </li>
-            </a>
           </ul>
         </div>
         <div className='md:hidden'>
@@ -72,31 +65,18 @@ function App() {
           <ul className='list-none flex flex-col
                          font-Poppins text-2xl font-bold
                          pt-12 gap-4'>
-            <Link to={"/"}>
-            <li className='flex justify-start items-center hover:text-empireyellow px-2'> 
-              HOME
+            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/')}>
+                HOME
             </li>
-            </Link>
-            <Link to={"/About-Us"}>
-            <li className='flex justify-start items-center hover:text-empireyellow px-2'>
-              ABOUT US
+            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/About-Us')}>
+                ABOUT US
             </li>
-            </Link>
-            <Link to={"/Services"}>
-            <li className='flex justify-start items-center hover:text-empireyellow px-2'>
-              SERVICES
+            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Services')}>
+                SERVICES
             </li>
-            </Link>
-            <Link to={"/Intake"}>
-            <li className='flex justify-start items-center hover:text-empireyellow px-2'>
-              INTAKE FORM
+            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Intake')}>
+                INTAKE FORM
             </li>
-            </Link>
-            <a href="https://empirehsi.com/volunteer/">
-            <li className='flex justify-start items-center hover:text-empireyellow px-2'>
-              VOLUNTEER WITH US
-            </li>
-            </a>
           </ul>
             <div className='absolute top-10 right-10 z-auto'>
             <svg 
@@ -123,7 +103,7 @@ function App() {
         <Outlet />
        </div>
        <div className='w-screen h-auto bg-black flex justify-center items-center text-white text-sm font-Poppins px-10 py-4'>
-        <span className=' text-center'>Copyright © 2023 Empire Health Systems. All Rights Reserved.</span>
+        <span className='text-center'>Copyright © 2023 Empire Health Systems. All Rights Reserved.</span>
        </div>
     </div>
   )

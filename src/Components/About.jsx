@@ -24,7 +24,7 @@ function About(){
                 </div>
             </div>
             <div className="w-screen h-auto">
-            <div className="px-4 md:px-12 lg:px-32 py-6 md:py-8 text-black text-sm font-Poppins">
+            <div className="px-6 md:px-12 lg:px-32 py-6 md:py-8 text-black text-sm font-Poppins">
             <h1 className="text-3xl font-bold text-empireblue-dark py-4">Current Business Objective</h1>
             
                 <h2 className="text-xl font-bold text-empireblue">Medical Group Practice:</h2><br></br>
@@ -49,6 +49,16 @@ Have treatment in the convenience of your home.<br></br>
 Avoid getting exposed to communicable disease.<br></br>
 For more information about us, please send us a message or reach us through our contact details.</span>
             </div>
+            <div className="w-full h-auto bg-gray-700 flex flex-row p-8">
+            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
+            <h1 className=" font-bold text-lg">Phone Number</h1>
+            <h2 className="font-thin text-md">+1 (213) 440-2707</h2>
+            </div>
+            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
+            <h1 className=" font-bold text-lg">E-mail Address</h1>
+            <h2 className="font-thin text-mb">ramirezpeter@empirehsi.com</h2>
+            </div>
+        </div>
             </div>
         </div>
     )
