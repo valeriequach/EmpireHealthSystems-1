@@ -1,17 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Home(){
+    const navigate = useNavigate();
     return(
         <>
         <div className="w-screen h-[90vh] md:h-[95vh]">
             <div className="w-screen h-[90vh] md:h-[95vh] absolute flex flex-col justify-center items-center z-20">
                 <span className="text-center text-3xl md:text-5xl font-Poppins font-bold text-white pb-6">Building the Future of Health Care</span>
-                <a href="https://empirehsi.com/intake/">
-                <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3">
+                
+                <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3" onClick={() => navigate('/Intake')}>
                     SCHEDULE YOUR APPOINTMENT
                 </button>
-                </a>
+                
             </div>
             <div className=" w-screen h-[90vh] md:h-[95vh] lg:h-screen absolute bg-empiregray opacity-50 z-10"></div>
             <img 
