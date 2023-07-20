@@ -15,9 +15,9 @@ function Home(){
                 </button>
                 
             </div>
-            <div className=" w-screen h-[90vh] md:h-[95vh] lg:h-screen absolute bg-empiregray opacity-50 z-10"></div>
+            <div className=" w-screen h-[85vh] md:h-[95vh] lg:h-screen absolute bg-empiregray opacity-50 z-10"></div>
             <img 
-                className="w-screen h-[90vh] md:h-[95vh] lg:h-screen object-cover overflow-auto md:overflow-hidden"
+                className="w-screen h-[85vh] md:h-[95vh] lg:h-screen object-cover overflow-auto md:overflow-hidden"
                 src="/assets/1.jpg" 
                 alt="Hospice and Home Health"
             />
