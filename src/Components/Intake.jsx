@@ -57,16 +57,16 @@ function Intake(){
                     Intake Form
                 </h1>
             </div>
-        <div className="relative w-screen h-2/5 bg-black bg-opacity-50 overflow-hidden">
-                <div className="absolute inset-0 w-full h-full flex items-center z-10">
+        <div className="relative w-screen h-1/5 md:h-2/5 overflow-hidden">
+                <div className="absolute inset-0 w-full h-full md:h-full flex items-center z-10">
                     <img 
                         src="/assets/intake-photo.jpg" 
                         alt="clipboard"
                         className="object-cover object-center min-w-full min-h-full" />
                 </div>
-                <div className="absolute inset-0 w-full h-full bg-black opacity-25 z-20"></div>
+                <div className="absolute inset-0 w-full h-full md:h-full bg-black opacity-25 z-20"></div>
             </div>
-        <div className="relative bg-gray-200 flex flex-col items-center p-2 sm:py-2 md:py-12 lg:py-24 font-Poppins">
+        <div className="relative bg-gray-200 flex flex-col items-center p-2 sm:py-2 md:py-12 lg:py-20 font-Poppins">
             <div className="container w-full md:w-11/12 lg:w-10/12 h-auto bg-white flex flex-col p-2 sm:p-4 md:p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="flex flex-col lg:flex-row gap-4 p-5">
@@ -315,14 +315,16 @@ function Intake(){
         <option value="Dr. Valle NPI#1689758526">Dr. Valle NPI#1689758526</option>
     </select>
 </div>
-            <div>
-                <button type="submit" className="w-full px-4 py-2 text-lg font-semibold text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Submit</button>
+            <div className="w-full md:w-1/4 pt-2 md:pt-4">
+                <button 
+                    type="submit" 
+                    className="w-full px-4 py-2 text-lg text-gray-700 hover:border-gray-700 border-2 font-Poppins active:scale-95">Submit</button>
             </div>
         </form>
             </div>
         </div>
         <div className='w-screen h-auto bg-black flex justify-center items-center text-white text-sm font-Poppins px-10 py-4'>
-        <span className=' text-center'>Copyright © 2023 Empire Health Systems. All Rights Reserved.</span>
+        <span className='text-center'>Copyright © 2023 Empire Health Systems. All Rights Reserved.</span>
        </div>
 </>
     );
