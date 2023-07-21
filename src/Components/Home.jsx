@@ -8,7 +8,7 @@ function Home(){
         <>
         <div className="w-screen h-[90vh] md:h-[95vh]">
             <div className="w-screen h-[90vh] md:h-[95vh] absolute flex flex-col justify-center items-center z-20">
-                <span className="text-center text-3xl md:text-5xl font-Poppins font-bold text-white pb-6">Building the Future of Health Care</span>
+                <span className="text-center text-3xl md:text-5xl font-Poppins font-bold text-white pb-6">Your Health, Our Priority</span>
                 
                 <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3" onClick={() => navigate('/Intake')}>
                     SCHEDULE YOUR APPOINTMENT
@@ -27,10 +27,9 @@ function Home(){
                 <div className="w-full lg:w-1/2 font-Poppins p-8 md:pt-10 lg:pt-4 h-auto lg:h-3/5 text-[#3d3d3d]">
                     <h2 className="font-bold text-lg lg:text-xl">Welcome To</h2>
                     <h1 className="font-bold text-2xl lg:text-4xl pb-4">Empire Health Systems</h1>
-                    <h5 className=" text-md lg:text-base">Are you a caregiver for a loved one who has an illness or disability? 
-                        Do they have access to medical care whenever they need them? If they don’t, 
-                        then you have come to the right place. We provide mobile medical services that 
-                        are always available for your loved ones when they are in need.</h5>
+                    <h5 className=" text-md lg:text-base">At Empire Health Systems, we offer a range of benefits that enhance the quality of care 
+                            and efficiency of health services. Our support for patient monitoring effectively reduces overall
+                            hospitalization rates, allowing for more patient-centric, home-based care.</h5>
                         <Link to={"/About-Us"}>
                         <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3 mt-12">
                             LEARN MORE
@@ -54,16 +53,6 @@ function Home(){
         <div className=" w-screen h-[90vh] md:h-[95vh] absolute bg-empiregray opacity-50 z-10">
         </div>
             <img src="/assets/stethoscope.jpg" alt="stethoscope" className="w-screen h-[90vh] md:h-[95vh] object-cover overflow-auto md:overflow-hidden -z-20" />
-        </div>
-        <div className="w-full h-auto bg-gray-700 flex flex-row p-8">
-            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
-            <h1 className=" font-bold text-lg">Phone Number</h1>
-            <h2 className="font-thin text-md">+1 (213) 440-2707</h2>
-            </div>
-            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
-            <h1 className=" font-bold text-lg">E-mail Address</h1>
-            <h2 className="font-thin text-mb">ramirezpeter@empirehsi.com</h2>
-            </div>
         </div>
         </>
     )

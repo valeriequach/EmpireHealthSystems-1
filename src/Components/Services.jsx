@@ -10,16 +10,16 @@ function Services(){
                    Services We Offer
                 </h1>
             </div>
-        <div className="flex flex-col gap-3 px-4 py-6 md:px-12 md:py-8 bg-empiregray bg-opacity-5">
-            {services.map(services => (
-          <ServiceCard
-            title={services.title}
-            desc={services.desc}
-            imgUrl={services.imgUrl}
-            bb5b={services.bb5b}
-          />
-        ))}
-        </div>
+            <div className="flex flex-col gap-3 px-4 py-6 md:px-12 md:py-8 bg-empiregray bg-opacity-5">
+                {services.map(services => (
+                <ServiceCard
+                title={services.title}
+                desc={services.desc}
+                imgUrl={services.imgUrl}
+                bb5b={services.bb5b}
+                />
+            ))}
+            </div>
         </div>
     )
 }

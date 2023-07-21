@@ -16,6 +16,19 @@ export default {
         Poppins : ['Poppins', 'Arial'],
         LibreBaskerville : ['Libre Baskerville', 'sans-serif'],
       },
+      keyframes: {
+        'slide': {
+          '0%': {
+            transform: 'translateX(-500px)'
+          },
+          '100%': {
+            transform: 'translateX(0)'
+          },
+        }
+      },
+      animation: {
+        'slide': 'slide 0.15s ease-in',
+      }
     },
   },
   plugins: [],

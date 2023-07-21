@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -61,20 +63,20 @@ function App() {
        {showMenu && (
         <div className="absolute top-0 right-0 w-screen y-screen z-50 md:hidden">
           <div className='bg-stone-800 bg-opacity-80 z-40 w-screen h-screen fixed'>
-          <div className='fixed flex flex-col bg-white bg-opacity-100 w-10/12 h-screen px-4 py-2 z-auto'>
+          <div className='fixed flex flex-col bg-white bg-opacity-100 w-10/12 h-screen px-4 py-2 z-auto animate-slide'>
           <ul className='list-none flex flex-col
                          font-Poppins text-2xl font-bold
                          pt-12 gap-4'>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/')}>
+            <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/')}>
                 HOME
             </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/About-Us')}>
+            <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/About-Us')}>
                 ABOUT US
             </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Services')}>
+            <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Services')}>
                 SERVICES
             </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Intake')}>
+            <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Intake')}>
                 INTAKE FORM
             </li>
           </ul>
@@ -102,6 +104,20 @@ function App() {
        <div>
         <Outlet />
        </div>
+       <div className="w-full h-auto bg-gray-700 flex flex-row p-8">
+            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
+            <h1 className=" font-bold text-lg">Phone Number</h1>
+            <a href="tel:+12134402707">
+            <h2 className="font-thin text-md hover:cursor-pointer">+1 (213) 440-2707</h2>
+            </a>
+            </div>
+            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
+            <h1 className=" font-bold text-lg">E-mail Address</h1>
+            <a href="mailto:info@empirehsi.com">
+            <h2 className="font-thin text-mb hover:cursor-pointer">info@empirehsi.com</h2>
+            </a>
+            </div>
+        </div>
        <div className='w-screen h-auto bg-black flex justify-center items-center text-white text-sm font-Poppins px-10 py-4'>
         <span className='text-center'>Copyright © 2023 Empire Health Systems. All Rights Reserved.</span>
        </div>
