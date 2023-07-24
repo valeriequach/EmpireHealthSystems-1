@@ -56,18 +56,20 @@ function About(){
                                 </center>
                             </div>
                             <span className=" flex-grow md:w-2/3">
-                                Dr. Herminigildo V. Valle, MD, MPA, is a distinguished medical practitioner with over three decades of experience across various disciplines. 
-                                Currently an Assistant Clinical Professor of Medicine at the University of California, San Francisco, and a Consultant at the San Francisco Center for 
-                                Advanced Wound Care Center, Dr. Valle expertly balances academia with clinical practice. 
-                                <br></br><br></br>Dr. Valle’s past roles include Undersecretary of the Department 
-                                of Health in the Philippines and Chief of Staff at AHMC Seton Medical Center. These roles, combined with his service as a Hospitalist and Chief Flight Surgeon 
-                                for the US Air Force Reserve, showcase his unique blend of medical and leadership skills. 
-                                <br></br><br></br>With a Master’s Degree in Public Administration and Health Services, 
-                                residency in Internal Medicine, and a fellowship in Vascular Medicine, Dr. Valle’s educational background is equally robust. His remarkable academic journey culminated 
-                                in graduating Cum Laude from the Far Eastern University, Institute of Medicine. 
-                                <br></br><br></br>Dr. Valle is a published author and presenter in various medical topics and holds numerous 
-                                licensures and certifications. He is a Diplomate of the American Board of Internal Medicine and the American Board of Wound Medicine and Surgery.
-                                In summary, Dr. Valle’s vast experience, education, and dedication make him a distinguished figure in medicine, offering a wealth of knowledge and skills to his patients and students alike.
+                            Dr. Herminigildo V. Valle, MD, MPA, is a distinguished physician and board-certified diplomate of 
+                            the American Board of Internal Medicine since 1990. His multifaceted career spans over three decades 
+                            and crosses numerous disciplines in the medical field.<br></br><br></br>
+                            Dr. Valle's experience is marked by significant roles such as a Consultant at the San Francisco Center 
+                            for Advanced Wound Care Center and a Hospitalist at esteemed institutions including Seton Medical Center 
+                            and Veterans Administration Medical Center. Demonstrating a unique blend of medical and leadership skills, 
+                            he served as Undersecretary of the Department of Health in the Philippines and Chief of Staff at AHMC Seton 
+                            Medical Center. His service as Chief Flight Surgeon for the US Air Force Reserve further illuminates his versatility.<br></br><br></br>
+                            An integral part of his journey has been his extensive experience in academic medicine. As an Assistant Clinical 
+                            Professor of Medicine at the University of California, San Francisco, he effectively balanced his commitment to teaching with his clinical practice.<br></br><br></br>
+                            His robust educational background includes a Master’s Degree in Public Administration and Health Services, a residency 
+                            in Internal Medicine, and a fellowship in Vascular Medicine. His academic journey culminated in graduating Cum Laude 
+                            from the Far Eastern University, Institute of Medicine.<br></br><br></br>
+                            A published author and presenter on various medical topics, Dr. Valle holds numerous other certifications and affiliations. 
                             </span>
                         </div>
                     </div>

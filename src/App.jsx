@@ -105,16 +105,19 @@ function App() {
         <Outlet />
        </div>
        <div className="w-full h-auto bg-gray-700 flex flex-row p-8">
-            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
+            <div className="text-white font-Poppins flex flex-col flex-grow justify-start items-start">
             <h1 className=" font-bold text-lg">Phone Number</h1>
             <a href="tel:+12134402707">
-            <h2 className="font-thin text-md hover:cursor-pointer">+1 (213) 440-2707</h2>
+            <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">US: +1 (213) 440-2707</h2>
+            </a>
+            <a href="tel:+63 9171501600">
+            <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">PHILIPPINES: +63 9171501600</h2>
             </a>
             </div>
-            <div className="text-white font-Poppins flex flex-col flex-grow justify-center items-center">
+            <div className="text-white font-Poppins flex flex-col flex-grow justify-start items-start">
             <h1 className=" font-bold text-lg">E-mail Address</h1>
             <a href="mailto:info@empirehsi.com">
-            <h2 className="font-thin text-mb hover:cursor-pointer">info@empirehsi.com</h2>
+            <h2 className="font-thin text-mb hover:cursor-pointer hover:text-empireblue">info@empirehsi.com</h2>
             </a>
             </div>
         </div>
