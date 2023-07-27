@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 function Intake(){
     const [formData, setFormData] = useState({
@@ -30,6 +30,8 @@ function Intake(){
     });
     const navigate = useNavigate();
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     const handleChange = (event) => {
         setFormData({
             ...formData,
@@ -50,14 +52,22 @@ function Intake(){
         }
     };
 
+    const handleLoginSuccess = () => {
+        setIsLoggedIn(true); // Change isLoggedIn to true after successful login
+    }
+
+    const handleLoginFailure = (error) => {
+        console.error('Login Failed:', error.details);
+    }
+
     return (
-        <>
+        <GoogleOAuthProvider clientId="642009559167-c21bbmjospif4mljqli2klp02lrd2vq2.apps.googleusercontent.com">
         <div className="w-screen h-auto flex justify-center py-4 shadow-xl">
                 <h1 className="text-empireblue text-3xl md:text-4xl lg:text-5xl font-bold">
                     Intake Form
                 </h1>
             </div>
-        <div className="relative w-screen h-1/5 md:h-2/5 overflow-hidden">
+        <div className="relative w-screen h-2/5 md:h-3/5 overflow-hidden">
                 <div className="absolute inset-0 w-full h-full md:h-full flex items-center z-10">
                     <img 
                         src="/assets/intake-photo.jpg" 
@@ -65,9 +75,17 @@ function Intake(){
                         className="object-cover object-center min-w-full min-h-full" />
                 </div>
                 <div className="absolute inset-0 w-full h-full md:h-full bg-black opacity-25 z-20"></div>
-            </div>
+            </div>  
+                <>
         <div className="relative bg-gray-200 flex flex-col items-center p-2 sm:py-2 md:py-12 lg:py-20 font-Poppins">
             <div className="container w-full md:w-11/12 lg:w-10/12 h-auto bg-white flex flex-col p-2 sm:p-4 md:p-6">
+            {!isLoggedIn &&(
+            <GoogleLogin
+                onSuccess={handleLoginSuccess}
+                onError={handleLoginFailure}
+            />
+            )}
+            {isLoggedIn && (
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="flex flex-col lg:flex-row gap-4 p-5">
                     <div className="lg:w-1/4">
@@ -321,12 +339,12 @@ function Intake(){
                     className="w-full px-4 py-2 text-lg text-gray-700 hover:border-gray-700 border-2 font-Poppins active:scale-95">Submit</button>
             </div>
         </form>
+        )}
             </div>
         </div>
-        <div className='w-screen h-auto bg-black flex justify-center items-center text-white text-sm font-Poppins px-10 py-4'>
-        <span className='text-center'>Copyright © 2023 Empire Health Systems. All Rights Reserved.</span>
-       </div>
-</>
+                </>
+            
+</GoogleOAuthProvider>
     );
 };
 
