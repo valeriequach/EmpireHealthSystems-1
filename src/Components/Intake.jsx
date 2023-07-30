@@ -352,6 +352,7 @@ function Intake(){
     <label htmlFor="photoId">Photo ID *</label>
     <input 
         type="file" 
+        id="photoId"
         name="photoId" 
         onChange={handleImageChange}
         className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 border-l-0 border-r-0 border-t-0  
@@ -362,6 +363,7 @@ function Intake(){
     <label htmlFor="medsList">Photo of Medication List *</label>
     <input 
         type="file" 
+        id="medsList"
         name="medsList" 
         onChange={handleImageChange}
         className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 border-l-0 border-r-0 border-t-0  
