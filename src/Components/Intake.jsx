@@ -50,20 +50,22 @@ function Intake(){
     }
     const handleSubmit = async (event) => {
         event.preventDefault(); // Prevents page reload
-      
+          
         const data = new FormData();
         Object.keys(formData).forEach((key) => {
             data.append(key, formData[key]);
         });
+    
         try {
-            console.log('About to make request with form data:', formData);
-            const response = await axios.post('https://api.empirehsi.com', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+            console.log('About to make request with form data:', data);
+            const response = await axios.post('https://api.empirehsi.com', data, { headers: { 'Content-Type': 'multipart/form-data' } });
             console.log('Form submitted successfully:', response.data);
             navigate("/FormSubmit");
         } catch (error) {
             console.error('Failed to submit form:', error);
         }
     };
+    
 
     const handleLoginSuccess = () => {
         setIsLoggedIn(true); // Change isLoggedIn to true after successful login
