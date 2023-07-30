@@ -27,6 +27,8 @@ function Intake(){
       contactEmail: '',
       contactPhone: '',
       supervisingMD: '',
+      photoId: null,
+      medsList: null,
     });
     const navigate = useNavigate();
 
@@ -39,12 +41,23 @@ function Intake(){
         });
     };
     
+    const handleImageChange = (event) => {
+        setFormData({
+            ...formData,
+            photoId: event.target.files[0],
+            medsList: event.target.files [0],
+        })
+    }
     const handleSubmit = async (event) => {
         event.preventDefault(); // Prevents page reload
       
+        const data = new FormData();
+        Object.keys(formData).forEach((key) => {
+            data.append(key, formData[key]);
+        });
         try {
             console.log('About to make request with form data:', formData);
-            const response = await axios.post('https://api.empirehsi.com', formData, { headers: { 'Content-Type': 'application/json' } });
+            const response = await axios.post('https://api.empirehsi.com', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
             console.log('Form submitted successfully:', response.data);
             navigate("/FormSubmit");
         } catch (error) {
@@ -332,6 +345,26 @@ function Intake(){
         <option value="">--Please choose an option--</option>
         <option value="Dr. Valle NPI#1689758526">Dr. Valle NPI#1689758526</option>
     </select>
+</div>
+<div>
+    <label htmlFor="photoId">Photo ID *</label>
+    <input 
+        type="file" 
+        name="photoId" 
+        onChange={handleImageChange}
+        className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 border-l-0 border-r-0 border-t-0  
+                focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:focus:ring-offset-gray-900" 
+        required />
+</div>
+<div>
+    <label htmlFor="medsList">Photo of Medication List *</label>
+    <input 
+        type="file" 
+        name="medsList" 
+        onChange={handleImageChange}
+        className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 border-l-0 border-r-0 border-t-0  
+                focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:focus:ring-offset-gray-900" 
+        required />
 </div>
             <div className="w-full md:w-1/4 pt-2 md:pt-4">
                 <button 
