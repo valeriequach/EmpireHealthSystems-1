@@ -8,23 +8,21 @@ function Home(){
     const navigate = useNavigate();
     const [ref, inView] = useInView({
         triggerOnce: false,  // trigger every time it enters the viewport
-        threshold: 0.5,
+        threshold: 0.6,
       });
     
     const title = "What is RPM?";
     const letters = title.split("");
     const containerVariants = {
-        initial: { opacity: 0 },
+        initial: { opacity: 0, x: -50 },
         animate: {
           opacity: 1,
+          x:0,
           transition: {
-            staggerChildren: 0.2 // Stagger the children by 0.2 seconds
+            ease: "easeInOut",
+            staggerChildren: 0.2
           },
         },
-      };
-      const letterVariants = {
-        initial: { opacity: 0, x: -50 },
-        animate: { opacity: 1, x: 0 },
       };
       
 
@@ -52,8 +50,9 @@ function Home(){
             <div className="w-screen h-[90vh] md:h-[100vh] absolute flex flex-col justify-center items-center z-20">
                 <span className="text-center text-3xl md:text-5xl font-Poppins font-bold text-white pb-6">Your Health, Our Priority</span>
                 
-                <button className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3" onClick={() => navigate('/Intake')}>
-                    SCHEDULE YOUR APPOINTMENT
+                <button 
+                    className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3" onClick={() => navigate('/Intake')}>
+                    SCHEDULE YOUR APPOINTMENT 
                 </button>
                 
             </div>
@@ -78,10 +77,9 @@ function Home(){
                 {letters.map((letter, index) => (
                     <motion.span 
                         key={index} 
-                        initial="initial" 
-                        animate="animate" 
-                        variants={letterVariants} 
-                        className="inline" // Changed to inline-block
+                        initial={{ opacity: 0, x: -50 }} 
+                        animate={{ opacity: 1, x: 0 }}
+                        style={{display: "inline"}}
                     >
                         {letter}
                     </motion.span>
@@ -105,10 +103,11 @@ function Home(){
                 </h3>
                 <motion.button 
                     className="text-black border-2 border-black rounded-md px-4 py-2 sm:ml-4" 
-                    onClick={() => navigate('/')}
                     whileHover={{scale: 1.1}}
                     whileTap={{scale: 1}}>
-                        Learn More
+                    <a href="https://www.youtube.com/watch?v=D-Eeygrp6rU">
+                    Learn More
+                    </a>
                 </motion.button>
                 </div>
                 <motion.div className="w-screen md:w-3/5 h-3/5 md:h-full flex justify-center items-center">
