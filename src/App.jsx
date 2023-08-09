@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom';
-import { useState } from "react";
+import {  Outlet } from 'react-router-dom';
+import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 
 
 function App() {
@@ -12,33 +11,52 @@ function App() {
     navigate(path);
     setShowMenu(false);
   }
+  
+  const [opacity, setOpacity] = useState('bg-opacity-40');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const targetScrollY = window.innerHeight * 0.3; // 30% of the viewport height
+      if (currentScrollY > targetScrollY) {
+        setOpacity('bg-opacity-70');
+      } else {
+        setOpacity('bg-opacity-30');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className='flex flex-col w-screen h-screen'>
-       <div className='relative
+    <div className='relative flex flex-col w-screen h-screen'>
+       <div className='z-50'>
+       <div className={`
                        h-auto w-screen
-                       flex flex-row md:flex-col justify-between items-center
-                       px-8 py-6'>
-        <div>
+                       flex flex-row justify-between md:justify-center items-center flex-shrink
+                       px-4 py-3
+                       bg-white ${opacity} transition duration-500`}>
+        <div className=''>
           <img 
-            src="/assets/empirelogo.svg" 
+            src="/assets/empirelogo.png" 
             alt="Empire Health Logo"
-            className='w-48' />
+            className='w-48 z-10' />
         </div>
-        
-        <div className=' hidden md:block'>
+        <div className='hidden md:block z-10'>
           <ul className='list-none flex flex-row
                          font-Poppins text-sm font-bold
                          pt-8'>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/')}>
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/')}>
                 HOME
             </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/About-Us')}>
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/About-Us')}>
                 ABOUT US
             </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/Services')}>
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/Services')}>
                 SERVICES
             </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2 hover:cursor-pointer' onClick={() => navigate('/Intake')}>
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/Intake')}>
                 INTAKE FORM
             </li>
           </ul>
@@ -59,6 +77,7 @@ function App() {
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
         </div>
+       </div>
        </div>
        {showMenu && (
         <div className="absolute top-0 right-0 w-screen y-screen z-50 md:hidden">

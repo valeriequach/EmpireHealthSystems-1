@@ -44,10 +44,10 @@ function Intake(){
     const handleImageChange = (event) => {
         setFormData({
             ...formData,
-            photoId: event.target.files[0],
-            medsList: event.target.files [0],
+            [event.target.name]: event.target.files[0],
         })
     }
+    
     const handleSubmit = async (event) => {
         event.preventDefault(); // Prevents page reload
           
@@ -77,20 +77,18 @@ function Intake(){
 
     return (
         <GoogleOAuthProvider clientId="642009559167-c21bbmjospif4mljqli2klp02lrd2vq2.apps.googleusercontent.com">
-        <div className="w-screen h-auto flex justify-center py-4 shadow-xl">
-                <h1 className="text-empireblue text-3xl md:text-4xl lg:text-5xl font-bold">
-                    Intake Form
-                </h1>
-            </div>
-        <div className="relative w-screen h-2/5 md:h-3/5 overflow-hidden">
-                <div className="absolute inset-0 w-full h-full md:h-full flex items-center z-10">
-                    <img 
-                        src="/assets/intake-photo.jpg" 
-                        alt="clipboard"
-                        className="object-cover object-center min-w-full min-h-full" />
+        <div className="relative w-screen h-[60vh] md:h-[80vh] lg:h-[85vh] overflow-hidden">
+                <div className="absolute inset-0 w-full h-[60vh] md:h-[80vh] lg:h-[85vh] flex justify-center items-center z-30">
+                    <h1 className="font-bold font-Poppins text-4xl text-white">
+                        Intake Form
+                    </h1>
                 </div>
-                <div className="absolute inset-0 w-full h-full md:h-full bg-black opacity-25 z-20"></div>
-            </div>  
+                <div className="absolute inset-0 w-full h-[60vh] md:h-[80vh] lg:h-[85vh] bg-black opacity-25 z-20"></div>
+                <img 
+                    src="/assets/intake-photo.jpg" 
+                    alt="clipboard"
+                    className="object-cover object-center w-screen h-[60vh] md:h-[80vh] lg:h-[85vh]" />
+        </div>  
                 <>
         <div className="relative bg-gray-200 flex flex-col items-center p-2 sm:py-2 md:py-12 lg:py-20 font-Poppins">
             <div className="container w-full md:w-11/12 lg:w-10/12 h-auto bg-white flex flex-col p-2 sm:p-4 md:p-6">
