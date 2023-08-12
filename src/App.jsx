@@ -129,9 +129,6 @@ function App() {
             <a href="tel:+12134402707">
             <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">US: +1 (213) 440-2707</h2>
             </a>
-            <a href="tel:+63 9171501600">
-            <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">PHILIPPINES: +63 9171501600</h2>
-            </a>
             </div>
             <div className="text-white font-Poppins flex flex-col flex-grow justify-start items-start">
             <h1 className=" font-bold text-lg">E-mail Address</h1>
