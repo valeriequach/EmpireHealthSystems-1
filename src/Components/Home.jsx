@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
+import About from "./About";
+import Services from "./Services"
 
 function Home(){
     const navigate = useNavigate();
@@ -136,6 +138,8 @@ function Home(){
         </div>
             <img src="/assets/stethoscope.jpg" alt="stethoscope" className="w-screen h-[90vh] md:h-[95vh] object-cover overflow-auto md:overflow-hidden -z-20" />
         </div>
+        <About />
+        <Services />
         </>
     )
 }
