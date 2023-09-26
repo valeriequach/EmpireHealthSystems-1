@@ -59,6 +59,9 @@ function App() {
             <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/Intake')}>
                 INTAKE FORM
             </li>
+            <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/Checkout')}>
+                PAYMENT
+            </li>
           </ul>
         </div>
         <div className='md:hidden'>
@@ -97,6 +100,9 @@ function App() {
             </li>
             <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Intake')}>
                 INTAKE FORM
+            </li>
+            <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Checkout')}>
+                PAYMENT
             </li>
           </ul>
             <div className='absolute top-10 right-10 z-auto'>

@@ -53,7 +53,7 @@ function Home(){
                 <span className="text-center text-3xl md:text-5xl font-Poppins font-bold text-white pb-6">Your Health, Our Priority</span>
                 
                 <button 
-                    className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3" onClick={() => navigate('/Intake')}>
+                    className="text-white bg-[#2d66bc] opacity-80 hover:bg-empireblue hover:opacity-100 rounded-md px-8 py-3 w-96" onClick={() => navigate('/Intake')}>
                     SCHEDULE YOUR APPOINTMENT 
                 </button>
                 
@@ -104,7 +104,7 @@ function Home(){
                     </AnimatePresence>
                 </h3>
                 <motion.button 
-                    className="text-black border-2 border-black rounded-md px-4 py-2 sm:ml-4" 
+                    className="text-white border-2 border-black rounded-md px-4 py-2 sm:ml-4 bg-empireblue w-60" 
                     whileHover={{scale: 1.1}}
                     whileTap={{scale: 1}}>
                     <a href="https://www.youtube.com/watch?v=D-Eeygrp6rU">
