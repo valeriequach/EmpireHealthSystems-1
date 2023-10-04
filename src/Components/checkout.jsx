@@ -1,53 +1,44 @@
 import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+import CheckoutForm from "./CheckoutForm";
 import "/src/stripe.css";
 
-const ProductDisplay = () => (
-  <section>
-    <div className="product">
-      <img
-        src=""
-        alt=""
-      />
-      <div className="description">
-      <h3>Service</h3>
-      <h5>$20.00</h5>
-      </div>
-    </div>
-    <form action="/create-checkout-session" method="POST">
-      <button type="submit">
-        Checkout
-      </button>
-    </form>
-  </section>
-);
+// Make sure to call loadStripe outside of a component’s render to avoid
+// recreating the Stripe object on every render.
+// This is your test publishable API key.
+const stripePromise = loadStripe("pk_test_51NmKckLq2OP5B9FXil5yp9GxoYikakBkfshHbxHcY0oBgtbqDc4dlN4VFYy862aGpL3bkHpybAUrufxeM8j9kciA00cdYkEcHL");
 
-const Message = ({ message }) => (
-  <section>
-    <p>{message}</p>
-  </section>
-);
-
-export default function Checkout() {
-  const [message, setMessage] = useState("");
+export default function App() {
+  const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
-
-    if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
-    }
-
-    if (query.get("canceled")) {
-      setMessage(
-        "Order canceled -- continue to shop around and checkout when you're ready."
-      );
-    }
+    // Create PaymentIntent as soon as the page loads
+    fetch("/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
   }, []);
 
-  return message ? (
-    <Message message={message} />
-  ) : (
-    <ProductDisplay />
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
+  return (
+    <div className="App">
+      {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm />
+        </Elements>
+      )}
+    </div>
   );
 }

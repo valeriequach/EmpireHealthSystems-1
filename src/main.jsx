@@ -6,6 +6,7 @@ import About from './Components/About.jsx'
 import Services from './Components/Services.jsx'
 import Intake from './Components/Intake.jsx'
 import FormSubmit from './Components/FormSubmit.jsx'
+import PaySubmit from './Components/PaySubmit.jsx'
 import Checkout from './Components/checkout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
@@ -39,6 +40,14 @@ const router = createBrowserRouter(
         {
           path: "/FormSubmit",
           element: <FormSubmit />,
+        },
+        {
+          path: "/PaySubmit",
+          element: <PaySubmit />,
+        },
+        {
+          path: "/Checkout",
+          element: <Checkout />,
         },
       ]
     }
