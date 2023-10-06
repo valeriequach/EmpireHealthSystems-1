@@ -132,8 +132,12 @@ function App() {
        <div className="w-full h-auto bg-gray-700 flex flex-row p-8">
             <div className="text-white font-Poppins flex flex-col flex-grow justify-start items-start">
             <h1 className=" font-bold text-lg">Phone Number</h1>
-            <a href="tel:+12134402707">
+            <a href="tel:+1 (310) 962-4808">
             <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">US: +1 (310) 962-4808</h2>
+            </a>
+            <h1 className=" font-bold text-lg">Fax Number</h1>
+            <a href="tel:(657) 233-0637">
+            <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">(657) 233-0637</h2>
             </a>
             </div>
             <div className="text-white font-Poppins flex flex-col flex-grow justify-start items-start">
