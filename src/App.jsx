@@ -36,7 +36,7 @@ function App() {
                        h-auto w-screen
                        flex flex-row justify-between md:justify-center items-center flex-shrink
                        px-4 py-3
-                       bg-white ${opacity} transition duration-500`}>
+                       bg-white ${opacity} transition duration-500 shadow-xl`}>
         <div className=''>
           <img 
             src="/assets/empirelogo.png" 
@@ -58,9 +58,6 @@ function App() {
             </li>
             <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/Intake')}>
                 INTAKE FORM
-            </li>
-            <li className='flex justify-center items-center hover:text-empireyellow px-2 pb-4 hover:cursor-pointer' onClick={() => navigate('/Checkout')}>
-                PAYMENT
             </li>
           </ul>
         </div>
@@ -101,23 +98,20 @@ function App() {
             <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Intake')}>
                 INTAKE FORM
             </li>
-            <li className='flex justify-start items-center hover:text-empireyellow px-2' onClick={() => handleClick('/Checkout')}>
-                PAYMENT
-            </li>
           </ul>
             <div className='absolute top-10 right-10 z-auto'>
             <svg 
               fill="none" 
               stroke="currentColor" 
-              stroke-width="1.5" 
+              strokeWidth="1.5" 
               viewBox="0 0 24 24" 
               xmlns="http://www.w3.org/2000/svg" 
               aria-hidden="true"
               className="w-8 h-8"
               onClick={() => setShowMenu(!showMenu)}>
               <path 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
                 d="M6 18L18 6M6 6l12 12">
               </path>
             </svg>
