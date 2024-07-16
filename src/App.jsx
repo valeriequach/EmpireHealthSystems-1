@@ -135,7 +135,7 @@ function App() {
             </a>
               <h1 className=" font-bold text-lg">Address</h1>
             <a href="Address: 12062 Valley View St Ste. 225B Garden Grove, CA 92845">
-            <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">(818) 898-1108</h2>
+            <h2 className="font-thin text-md hover:cursor-pointer hover:text-empireblue">Address: 12062 Valley View St Ste. 225B Garden Grove, CA 92845</h2>
             </a> 
             </div>
             <div className="text-white font-Poppins flex flex-col flex-grow justify-start items-start">
